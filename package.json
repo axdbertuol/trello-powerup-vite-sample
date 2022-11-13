@@ -1,12 +1,7 @@
 {
-  "name": "vite-plugin-virtual-mpa-demo",
+  "name": "trello-powerup-vite-sample",
   "private": true,
-  "description": "Examples for vite-plugin-virtual-mpa.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emosheeep/vite-plugin-virtual-mpa",
-    "directory": "workspaces/example"
-  },
+  "description": "A sample trello powerup with vite and vue ",
   "scripts": {
     "serve": "vite",
     "build": "vite build"

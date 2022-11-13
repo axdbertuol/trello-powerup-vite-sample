@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css" />
+  <!-- Preload frequently used scripts to make your Power-up UI quick at the expense of bandwidth -->
+  <!--<link rel="preload" href="./addon.js" as="script">-->
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://p.trellocdn.com/power-up.min.js"></script>
+
 </html>

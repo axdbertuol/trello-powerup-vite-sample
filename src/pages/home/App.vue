@@ -1,3 +1,6 @@
+<script setup>
+window.TrelloPowerUp.initialize({})
+</script>
 <template>
   <div>This is Home page</div>
   <a target="_self" href="/apple">apple</a>
