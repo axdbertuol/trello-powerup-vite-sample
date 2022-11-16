@@ -1,4 +1,4 @@
-<script setup lang="tsx">
+<script setup lang="ts">
 import { computed, reactive } from "vue";
 import { useRouter, RouterLink, RouterView } from "vue-router";
 const router = useRouter();

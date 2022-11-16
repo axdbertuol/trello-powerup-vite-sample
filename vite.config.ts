@@ -16,38 +16,19 @@ export default defineConfig({
     createMpaPlugin({
       pages: [
         {
-          name: "apple",
-          /**
-           * filename is optional, default is `${name}.html`, which is the relative path of `build.outDir`.
-           */
-          filename: "fruits/apple.html", // output into sites/fruits/apple.html at build time.
-          entry: "/src/pages/apple/apple.js",
-          data: {
-            title: "This is Apple page",
-          },
-        },
-        {
-          name: "banana",
-          filename: "fruits/banana.html",
-          entry: "/src/pages/banana/banana.js",
-          data: {
-            title: "This is Banana page",
-          },
-        },
-        {
           name: "note",
-          filename: "powerup/card-buttons/note.html",
-          entry: "/src/pages/powerup",
+          filename: "app/card-buttons/note.html",
+          entry: "/src/pages/app",
           data: {
-            title: "This is a powerup page",
+            title: "This is a app page",
           },
         },
         {
           name: "manage",
-          filename: "powerup/card-buttons/manage.html",
-          entry: "/src/pages/powerup",
+          filename: "app/card-buttons/manage.html",
+          entry: "/src/pages/app",
           data: {
-            title: "This is a powerup page",
+            title: "This is a app page",
           },
         },
         {
