@@ -8,14 +8,11 @@ const base = "/"; // You can change whatever you want
 // https://vitejs.dev/config/
 export default defineConfig({
   base,
-  resolve: {
-    alias: {
-      '@': normalizePath(base + 'src/'),
-    }
-  },
   plugins: [
     vue(),
-    vueJsx(),
+    vueJsx({
+      // include: ["src/components/**/**.tsx"],
+    }),
     createMpaPlugin({
       pages: [
         {
@@ -26,32 +23,40 @@ export default defineConfig({
           filename: "fruits/apple.html", // output into sites/fruits/apple.html at build time.
           entry: "/src/pages/apple/apple.js",
           data: {
-            title: "This is Apple page"
-          }
+            title: "This is Apple page",
+          },
         },
         {
           name: "banana",
           filename: "fruits/banana.html",
           entry: "/src/pages/banana/banana.js",
           data: {
-            title: "This is Banana page"
-          }
+            title: "This is Banana page",
+          },
         },
         {
-          name: "strawberries",
-          filename: "fruits/strawberries.html",
-          entry: "/src/pages/strawberries/strawberries.js",
+          name: "note",
+          filename: "powerup/card-buttons/note.html",
+          entry: "/src/pages/powerup",
           data: {
-            title: "This is Strawberries page"
-          }
+            title: "This is a powerup page",
+          },
+        },
+        {
+          name: "manage",
+          filename: "powerup/card-buttons/manage.html",
+          entry: "/src/pages/powerup",
+          data: {
+            title: "This is a powerup page",
+          },
         },
         {
           name: "index",
-          entry: "/src/pages/home/index.js",
+          entry: "/src/pages/home",
           data: {
-            title: "This is Home page"
-          }
-        }
+            title: "This is Home page",
+          },
+        },
       ],
       /**
        * Customize the history fallback rewrite rules.
@@ -80,8 +85,16 @@ export default defineConfig({
         handler: (ctx) => {
           console.log(ctx.type, ctx.file);
           // ctx.reloadPages()
-        }
-      }
-    })
-  ]
+        },
+      },
+    }),
+  ],
+  esbuild: {
+    jsxInject: ".tsx",
+  },
+  resolve: {
+    alias: {
+      "@/*": normalizePath(base + "/src/"),
+    },
+  },
 });
